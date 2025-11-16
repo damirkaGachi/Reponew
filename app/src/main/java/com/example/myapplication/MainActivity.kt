@@ -177,7 +177,7 @@ fun WaterTracker() {
                 OutlinedTextField(
                     value = goal.toString(),
                     onValueChange = {
-                        goal = it.toIntOrNull() ?: 0
+                        goal = it.toIntOrNull() ?: 1
                     },
                     modifier = Modifier.weight(1f),
                     keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number)
