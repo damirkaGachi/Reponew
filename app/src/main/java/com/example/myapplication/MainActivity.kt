@@ -77,7 +77,7 @@ fun Ex72(){
         modifier = Modifier
             .fillMaxHeight()
             .fillMaxWidth()
-            .padding(horizontal = 16.dp),
+            .padding(horizontal = 20.dp),
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
