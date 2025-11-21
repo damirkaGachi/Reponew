@@ -64,6 +64,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.ColorFilter
 import androidx.compose.ui.graphics.RectangleShape
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
@@ -124,7 +125,7 @@ fun WaterTracker() {
             )
             Button(
                 onClick = { waterCount++ },
-                modifier = Modifier.fillMaxWidth()
+                modifier = Modifier.fillMaxWidth().testTag("button")
             ) {
                 Text("Выпить стакан воды (250 мл)")
             }
@@ -132,7 +133,7 @@ fun WaterTracker() {
                 onClick = {
                     showResetDialog = true
                 },
-                modifier = Modifier.fillMaxWidth(),
+                modifier = Modifier.fillMaxWidth().testTag("endday"),
                 colors = ButtonDefaults.buttonColors(
                     containerColor = Color.Green
                 )
@@ -177,7 +178,7 @@ fun WaterTracker() {
                 OutlinedTextField(
                     value = goal.toString(),
                     onValueChange = {
-                        goal = it.toIntOrNull() ?: 1
+                        goal = it.toIntOrNull() ?: 0
                     },
                     modifier = Modifier.weight(1f),
                     keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number)
